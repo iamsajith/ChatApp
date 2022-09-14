@@ -1,0 +1,28 @@
+<div class="wrapper">
+ <form class="p-3 mt-3" #userlogin="ngForm" (ngSubmit)="submit()">
+  <label for="" class="text-dark fs-5 mb-1">Enter your e-mail</label>
+   <div
+     class="form-field d-flex align-items-center"
+   >
+     <span>📧</span>
+     <input
+       type="email"
+       name="email"
+       id="email"
+       placeholder="Email"
+       pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+       [(ngModel)]="userCred.email"
+       #email="ngModel"
+       [class.is-invalid]="email.invalid && email.touched"
+       required
+     />
+     <small [class.d-none]="email.valid" class="px-3 text-danger">χ</small>
+     <small [class.d-none]="email.invalid" class="px-3 text-success">✓</small>
+   </div>
+   <button class="btn mt-3" routerLink="/auth/signup/set-username" [disabled]="userlogin.form.invalid">>>></button>
+ </form>
+ <div class="text-center">
+  <a routerLink="/auth/login" class="fs-2">←</a>
+</div>
+</div>
+

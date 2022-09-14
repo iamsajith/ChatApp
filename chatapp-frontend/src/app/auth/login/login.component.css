@@ -1,16 +1,10 @@
 
 
-/* Reseting */
 * {
  margin: 0;
  padding: 0;
  box-sizing: border-box;
  font-family: 'Poppins', sans-serif;
-}
-
-body {
- /* background: #ecf0f3; */
- background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
 }
 
 .wrapper {

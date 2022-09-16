@@ -32,6 +32,7 @@
        placeholder="Password"
        [(ngModel)]="User.password"
        minlength="6"
+       maxlength="6"
        #password="ngModel"
        required
      />
@@ -48,7 +49,7 @@
    <a routerLink="/auth/signup">Create New Account</a>
  </div>
  <div class="text-center fs-6">
-  <a routerLink="/newpassword">Forgot Password?</a>
+  <a routerLink="../new-password">Forgot Password?</a>
 </div>
 </div>
  

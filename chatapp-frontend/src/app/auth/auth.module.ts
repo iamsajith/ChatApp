@@ -7,7 +7,6 @@ import { SignupComponent } from './signup/signup.component';
 
 
 import { AuthRoutingModule } from './auth-routing.module';
-import { CheckUsernameComponent } from './check-username/check-username.component';
 import { SetPasswordComponent } from './set-password/set-password.component';
 
 
@@ -15,7 +14,6 @@ import { SetPasswordComponent } from './set-password/set-password.component';
   declarations: [
     LoginComponent,
     SignupComponent,
-    CheckUsernameComponent,
     SetPasswordComponent,
   ],
   imports: [

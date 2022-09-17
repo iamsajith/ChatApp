@@ -15,7 +15,7 @@ export class AuthService {
     return this._http.post('http://localhost:8080/login',data)
   }
   NewPassword(data:any){
-    return this._http.post('http://localhost:8080/newpassword',data)
+    return this._http.put('http://localhost:8080/newpassword',data)
   }
 
 }

@@ -4,7 +4,7 @@ import express from "express";
 import connectApp from "./utils/app";
 import connect from "./utils/connect";
 import 'reflect-metadata';
-import { RedisStore, client } from "./api/auth/services/session.services";
+import { RedisStore, client } from "./api/auth/services/session.service";
 import routes from "./routes";
 const PORT = process.env.PORT;
 

@@ -15,9 +15,10 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  Verify() {
-    this._auth.Verify(this.User).subscribe((res) => {
-      console.log('credentials', this.User);
+  Verify(){
+    this._auth.Verify(this.User).subscribe(async (res) => {
+      const data = JSON.parse(JSON.stringify(res))
+      await localStorage.setItem("token",data.data.token)
       this._router.navigate(['/chat']);
       console.log(res);
     });

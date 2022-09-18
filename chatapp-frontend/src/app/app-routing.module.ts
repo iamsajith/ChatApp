@@ -5,10 +5,11 @@ import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component
 // import { ChatLayoutComponent } from './layouts/chat-layout/chat-layout.component';
 import { CHAT_ROUTES } from './shared/routes/chat.routes';
 import { ChatsComponent } from './home/chats/chats.component';
+import { AuthGuard } from './shared/guard/auth.guard';
 
 const routes: Routes = [
   {
-    path:"",
+    path:"auth",
     component:AuthLayoutComponent,
     children:AUTH_ROUTES
   },
@@ -18,7 +19,8 @@ const routes: Routes = [
   //   children:CHAT_ROUTES
   // },
   {
-    path:"chat",
+    path:"",
+    canActivate:[AuthGuard],
     component:ChatsComponent
   }
 ];

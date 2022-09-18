@@ -2,6 +2,7 @@ import { Service } from "typedi";
 import { Request, Response } from "express";
 import { AuthService } from "../services/auth.service";
 
+
 @Service()
 export class AuthController {
   constructor(private authService: AuthService) {}
@@ -16,7 +17,7 @@ export class AuthController {
       });
     } catch (error: any) {
       return res.status(400).json({
-        status: 201,
+        status: 400,
         error: "Error",
         message: error.message,
       });

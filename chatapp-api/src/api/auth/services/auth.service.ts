@@ -1,5 +1,6 @@
 import { Request } from "express";
 import { Service } from "typedi";
+import  jwt from "jsonwebtoken"
 import Users, { AuthDocument } from "../../../model/auth.model";
 import { sendMail } from "../../../services/send-email.service";
 
@@ -8,9 +9,10 @@ export class AuthService {
   constructor(private auth: AuthDocument) {}
   SaveUser = async (req: Request) => {
     const randomPin = Math.floor(100000 + Math.random() * 900000);
-    var user = req.body;
+    const user = req.body;
     console.log(user);
     const check = await Users.findOne({ username: user.data.username });
+    console.log(check)
     if (check === null) {
       const Userdoc = new Users({
         username: user.data.username,
@@ -36,7 +38,9 @@ export class AuthService {
         username: req.body.username,
         password: req.body.password,
       });
-      return user;
+      let payload = { subject: req.body.username + req.body.password };
+      let token = jwt.sign(payload, "secretKey");
+      return {"user":user,"token":token};
     } catch (error: any) {
       console.log(error);
       throw new Error(error);
